@@ -9,14 +9,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String result = "";
+  String? result;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Scan Barcode & QRcode")),
-      body: Card(
-        child: ListTile(title: Text("test")),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          child: SizedBox(
+            width: double.infinity,
+            height: 300,
+            child: Card(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "Scanning result",
+                    style: TextStyle(fontSize: 30),
+                  ),
+                  Text(result ??= "No result", style: TextStyle(fontSize: 25)),
+                ],
+              ),
+            ),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
