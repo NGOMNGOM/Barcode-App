@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 
-import "home.dart";
+import 'screen/home.dart';
+
+// รหัส keystore 123456
 
 void main() {
   runApp(MyApp());
